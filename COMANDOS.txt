@@ -1,0 +1,51 @@
+COMANDOS PARA EJECUTAR EL PROYECTO IABUILDER
+==============================================
+
+DESARROLLO LOCAL:
+------------------
+1. Navegar al directorio del proyecto:
+   cd "/home/linuxpc/Desktop/Web iabuilder"
+
+2. Instalar dependencias (solo la primera vez):
+   npm install
+
+3. Ejecutar servidor de desarrollo:
+   npm run dev
+
+4. Abrir navegador en:
+   http://localhost:3000
+
+PRODUCCIÓN LOCAL:
+-----------------
+1. Navegar al directorio del proyecto:
+   cd "/home/linuxpc/Desktop/Web iabuilder"
+
+2. Instalar dependencias (solo la primera vez):
+   npm install
+
+3. Crear build de producción:
+   npm run build
+
+4. Ejecutar servidor de producción:
+   npm run start
+
+5. Abrir navegador en:
+   http://localhost:5000
+
+NOTAS IMPORTANTES:
+------------------
+- El servidor de desarrollo (npm run dev) corre en puerto 3000
+- El servidor de producción (npm run start) corre en puerto 5000
+- Para desarrollo usa siempre 'npm run dev'
+- El build de producción es necesario antes de 'npm run start'
+
+IDIOMAS DISPONIBLES:
+---------------------
+- Inglés: http://localhost:3000/en
+- Español: http://localhost:3000/es
+- El sitio detecta automáticamente el idioma del navegador
+
+COMANDOS ADICIONALES:
+---------------------
+- Verificar código: npm run lint
+- Construir solo: npm run build

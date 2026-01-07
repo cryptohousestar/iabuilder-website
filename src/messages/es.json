@@ -1,0 +1,149 @@
+{
+  "nav": {
+    "features": "Características",
+    "demo": "Demo",
+    "install": "Instalar",
+    "docs": "Documentación",
+    "github": "GitHub"
+  },
+  "hero": {
+    "title": "IABuilder",
+    "subtitle": "IA en tu terminal para desarrollo diario",
+    "description": "Trabaja con cualquier proveedor de IA desde tu terminal. Una herramienta práctica que complementa tu flujo de trabajo.",
+    "cta": {
+      "install": "Instalar Ahora",
+      "demo": "Ver Demo"
+    }
+  },
+  "features": {
+    "title": "Características",
+    "subtitle": "Todo lo que necesitas para un desarrollo eficiente",
+    "items": {
+      "terminal": {
+        "title": "Terminal-First",
+        "description": "Funciona desde cualquier directorio sin abrir aplicaciones especiales"
+      },
+      "providers": {
+        "title": "Multi-Proveedor",
+        "description": "Compatible con tus claves API existentes de cualquier proveedor"
+      },
+      "tools": {
+        "title": "Herramientas Prácticas",
+        "description": "Leer, editar, ejecutar comandos y buscar en tu código"
+      },
+      "context": {
+        "title": "Contexto Inteligente",
+        "description": "Recuerda tu conversación y entiende tu proyecto"
+      }
+    }
+  },
+  "install": {
+    "title": "Instalación Simple",
+    "subtitle": "Comienza en minutos",
+    "steps": {
+      "1": {
+        "title": "Instalar IABuilder",
+        "command": "pip install iabuilder"
+      },
+      "2": {
+        "title": "Configurar tu API",
+        "command": "iabuilder\\n/configure-api groq"
+      },
+      "3": {
+        "title": "Comenzar a programar",
+        "command": "cd ~/tu-proyecto\\niabuilder"
+      }
+    },
+    "finalText": "¡Eso es todo! Estás listo para comenzar a usar IABuilder.",
+    "helpCommand": "iabuilder --help",
+    "providerSwitch": {
+      "title": "Cambiando de Proveedor",
+      "description": "Una vez configurado, puedes cambiar fácilmente entre proveedores:",
+      "command": "/provider openai",
+      "note": "Google Gemini funciona excelente para la mayoría de tareas de desarrollo. Cambia a proveedores premium como GPT-4 o Claude para uso intensivo/pesado."
+    }
+  },
+  "why-local": {
+    "title": "¿Por Qué IA Local en Terminal?",
+    "subtitle": "Toma control de tu flujo de desarrollo con IA",
+    "benefits": {
+      "control": {
+        "title": "Control Total",
+        "description": "Trabaja con tus archivos directamente. No subas código a interfaces web. Mantén tu código sensible privado."
+      },
+      "integration": {
+        "title": "Integración Fluida",
+        "description": "Funciona con tu flujo de trabajo terminal existente. Úsalo junto con git, editores y otras herramientas de desarrollo."
+      },
+      "speed": {
+        "title": "Desarrollo Más Rápido",
+        "description": "Sin latencia web. Llamadas directas a APIs significan respuestas más rápidas y mejor productividad."
+      },
+      "privacy": {
+        "title": "Privacidad Primero",
+        "description": "Tu código se queda en tu máquina. No hay riesgo de fugas de datos o código almacenado en servidores externos."
+      },
+      "offline": {
+        "title": "Capaz Offline",
+        "description": "Continúa trabajando incluso sin internet. Perfecto para desarrollo en aviones, áreas remotas o conexiones inestables."
+      },
+      "customization": {
+        "title": "Experiencia Personalizada",
+        "description": "Personaliza tu configuración de IA para tu estilo de desarrollo específico y necesidades del proyecto."
+      }
+    },
+    "comparison": {
+      "web": "Interfaces Web",
+      "local": "Terminal IABuilder",
+      "vs": "vs",
+      "webPros": "Acceso fácil desde cualquier lugar",
+      "localPros": "Control total y privacidad"
+    }
+  },
+  "providers": {
+    "title": "Proveedores Soportados",
+    "subtitle": "Límites diarios gratuitos + opciones premium",
+    "list": {
+      "google": {
+        "name": "Google Gemini",
+        "description": "Mejor opción gratuita para desarrollo profesional - Límites diarios, sin rate limits"
+      },
+      "groq": {
+        "name": "Groq",
+        "description": "Tokens diarios gratuitos con rate limits"
+      },
+      "openrouter": {
+        "name": "OpenRouter",
+        "description": "Tokens diarios gratuitos con rate limits"
+      },
+      "openai": {
+        "name": "OpenAI",
+        "description": "Premium - GPT-4, GPT-3.5 (recomendado para uso pro)"
+      },
+      "anthropic": {
+        "name": "Anthropic",
+        "description": "Premium - Modelos Claude (recomendado para uso pro)"
+      },
+      "coming": {
+        "name": "Próximamente",
+        "description": "Modelos locales, más proveedores"
+      }
+    },
+    "recommendation": "Google Gemini funciona excelente para desarrollo profesional con generosos límites diarios. Para uso intensivo/pesado, considera modelos premium como GPT-4 o Claude para acceso ilimitado."
+  },
+  "demo": {
+    "title": "Demo Interactiva",
+    "subtitle": "Configuración completa + flujo de desarrollo",
+    "reset": "Reiniciar",
+    "description": "Esta demo muestra la experiencia completa de IABuilder: desde la configuración inicial con Google Gemini (excelente para desarrollo profesional) hasta construir funcionalidades reales. Para uso intensivo/pesado, proveedores premium como GPT-4 o Claude ofrecen acceso ilimitado."
+  },
+  "footer": {
+    "description": "IABuilder es una herramienta de terminal que hace la IA accesible sin cambiar tu flujo de trabajo.",
+    "links": {
+      "github": "GitHub",
+      "docs": "Documentación",
+      "discord": "Comunidad"
+    },
+    "copyright": "Hecho con ❤️ para desarrolladores"
+  }
+}
