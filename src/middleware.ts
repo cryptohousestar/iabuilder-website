@@ -9,7 +9,7 @@ export default createMiddleware({
   defaultLocale: 'en',
 
   // Detect locale from browser preferences
-  localeDetection: false,
+  localeDetection: true,
 
   // Allow hiding the locale prefix for the default locale
   localePrefix: 'as-needed'

@@ -26,9 +26,12 @@ export function Hero() {
           >
             {t('cta.install')}
           </Link>
-          <button className="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+          <Link
+            href="#demo"
+            className="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors inline-block text-center"
+          >
             {t('cta.demo')}
-          </button>
+          </Link>
         </div>
       </div>
     </section>

@@ -3,10 +3,13 @@
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
+type OS = 'linux' | 'macos' | 'windows';
+
 export function Install() {
   const t = useTranslations('install');
   const tNav = useTranslations('nav');
   const [copiedCommand, setCopiedCommand] = useState<string | null>(null);
+  const [selectedOS, setSelectedOS] = useState<OS>('linux');
 
   const copyToClipboard = async (command: string) => {
     try {
@@ -18,11 +21,28 @@ export function Install() {
     }
   };
 
-  const steps = [
-    { key: '1', command: 'pip install iabuilder' },
-    { key: '2', command: 'iabuilder\n/configure-api groq' },
-    { key: '3', command: 'cd ~/your-project\niabuilder' }
-  ];
+  const getStepsForOS = (os: OS) => {
+    const steps = {
+      linux: [
+        { key: '1', command: 'git clone https://github.com/cryptohousestar/Iabuilder.git\ncd Iabuilder\n./install_iabuilder.sh' },
+        { key: '2', command: 'iabuilder\n/configure-api groq' },
+        { key: '3', command: 'cd ~/your-project\niabuilder' }
+      ],
+      macos: [
+        { key: '1', command: 'git clone https://github.com/cryptohousestar/Iabuilder.git\ncd Iabuilder\n./install_iabuilder_macos.sh' },
+        { key: '2', command: 'iabuilder\n/configure-api groq' },
+        { key: '3', command: 'cd ~/your-project\niabuilder' }
+      ],
+      windows: [
+        { key: '1', command: 'git clone https://github.com/cryptohousestar/Iabuilder.git\ncd Iabuilder\n.\\install_iabuilder_windows.ps1' },
+        { key: '2', command: 'iabuilder\n/configure-api groq' },
+        { key: '3', command: 'cd C:\\your-project\niabuilder' }
+      ]
+    };
+    return steps[os];
+  };
+
+  const steps = getStepsForOS(selectedOS);
 
   return (
     <section id="install" className="py-20 px-4">
@@ -34,6 +54,40 @@ export function Install() {
           <p className="text-xl text-gray-600">
             {t('subtitle')}
           </p>
+
+          {/* OS Selector */}
+          <div className="flex justify-center gap-4 mt-8">
+            <button
+              onClick={() => setSelectedOS('linux')}
+              className={`px-6 py-2 rounded-lg font-medium transition-colors ${
+                selectedOS === 'linux'
+                  ? 'bg-gray-900 text-white'
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+              }`}
+            >
+              🐧 Linux
+            </button>
+            <button
+              onClick={() => setSelectedOS('macos')}
+              className={`px-6 py-2 rounded-lg font-medium transition-colors ${
+                selectedOS === 'macos'
+                  ? 'bg-gray-900 text-white'
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+              }`}
+            >
+              🍎 macOS
+            </button>
+            <button
+              onClick={() => setSelectedOS('windows')}
+              className={`px-6 py-2 rounded-lg font-medium transition-colors ${
+                selectedOS === 'windows'
+                  ? 'bg-gray-900 text-white'
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+              }`}
+            >
+              🪟 Windows
+            </button>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">

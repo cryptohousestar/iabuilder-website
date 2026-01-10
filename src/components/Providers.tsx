@@ -11,7 +11,7 @@ export function Providers() {
     { key: 'openrouter', color: 'bg-purple-100 text-purple-800' },
     { key: 'openai', color: 'bg-green-100 text-green-800' },
     { key: 'anthropic', color: 'bg-red-100 text-red-800' },
-    { key: 'coming', color: 'bg-gray-100 text-gray-600' }
+    { key: 'ollama', color: 'bg-indigo-100 text-indigo-800' }
   ];
 
   return (
@@ -41,13 +41,13 @@ export function Providers() {
 
         <div className="text-center mt-12">
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 max-w-2xl mx-auto">
-            <p className="text-blue-800 font-medium mb-2">💡 Professional Recommendation</p>
+            <p className="text-blue-800 font-medium mb-2">{t('recommendationTitle')}</p>
             <p className="text-blue-700 text-sm">
               {t('recommendation')}
             </p>
           </div>
           <p className="text-gray-600 mt-6">
-            More providers coming soon. IABuilder is designed to work with any AI service.
+            {t('moreProviders')}
           </p>
         </div>
       </div>

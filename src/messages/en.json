@@ -42,16 +42,13 @@
     "subtitle": "Get started in minutes",
     "steps": {
       "1": {
-        "title": "Install IABuilder",
-        "command": "pip install iabuilder"
+        "title": "Clone & Install"
       },
       "2": {
-        "title": "Configure your API",
-        "command": "iabuilder\\n/configure-api groq"
+        "title": "Configure your API"
       },
       "3": {
-        "title": "Start coding",
-        "command": "cd ~/your-project\\niabuilder"
+        "title": "Start coding"
       }
     },
     "finalText": "That's it! You're ready to start using IABuilder.",
@@ -124,12 +121,14 @@
         "name": "Anthropic",
         "description": "Premium - Claude models (recommended for pro use)"
       },
-      "coming": {
-        "name": "Coming Soon",
-        "description": "Local models, more providers"
+      "ollama": {
+        "name": "Ollama (Local)",
+        "description": "100% Free - Local models without internet (Llama, Qwen, DeepSeek)"
       }
     },
-    "recommendation": "Google Gemini works great for professional development with generous daily limits. For intensive/heavy usage, consider premium models like GPT-4 or Claude for unlimited access."
+    "recommendation": "Google Gemini works great for professional development with generous daily limits. For intensive/heavy usage, consider premium models like GPT-4 or Claude. Ollama offers 100% free models that run locally without internet.",
+    "recommendationTitle": "💡 Professional Recommendation",
+    "moreProviders": "More providers coming soon. IABuilder is designed to work with any AI service."
   },
   "demo": {
     "title": "Interactive Demo",
@@ -142,7 +141,7 @@
     "links": {
       "github": "GitHub",
       "docs": "Documentation",
-      "discord": "Community"
+      "discord": "Discussions"
     },
     "copyright": "Built with ❤️ for developers"
   }

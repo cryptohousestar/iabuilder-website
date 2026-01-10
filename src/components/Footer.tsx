@@ -17,7 +17,7 @@ export function Footer() {
 
         <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-8">
           <a
-            href="https://github.com/your-username/iabuilder"
+            href="https://github.com/cryptohousestar/Iabuilder"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transition-colors"
@@ -25,7 +25,7 @@ export function Footer() {
             {t('links.github')}
           </a>
           <a
-            href="https://github.com/your-username/iabuilder#readme"
+            href="https://github.com/cryptohousestar/Iabuilder#readme"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transition-colors"
@@ -33,7 +33,9 @@ export function Footer() {
             {t('links.docs')}
           </a>
           <a
-            href="https://discord.gg/iabuilder"
+            href="https://github.com/cryptohousestar/Iabuilder/discussions"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transition-colors"
           >
             {t('links.discord')}

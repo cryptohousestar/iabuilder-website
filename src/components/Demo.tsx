@@ -9,16 +9,27 @@ interface TerminalLine {
   delay?: number;
 }
 
+type OS = 'linux' | 'macos' | 'windows';
+
 export function Demo() {
   const t = useTranslations('demo');
   const [currentLine, setCurrentLine] = useState(0);
   const [displayedLines, setDisplayedLines] = useState<TerminalLine[]>([]);
   const [isTyping, setIsTyping] = useState(false);
+  const [selectedOS, setSelectedOS] = useState<OS>('linux');
 
-  const demoLines: TerminalLine[] = [
-    { type: 'prompt', content: '$ cd ~/my-project' },
-    { type: 'command', content: 'cd ~/my-project', delay: 500 },
-    { type: 'prompt', content: '$ iabuilder' },
+  const getDemoLinesForOS = (os: OS): TerminalLine[] => {
+    const prompts = {
+      linux: { prefix: '$', cd: '$ cd ~/my-project', cdCmd: 'cd ~/my-project' },
+      macos: { prefix: '$', cd: '$ cd ~/my-project', cdCmd: 'cd ~/my-project' },
+      windows: { prefix: '>', cd: '> cd C:\\my-project', cdCmd: 'cd C:\\my-project' }
+    };
+    const p = prompts[os];
+
+    return [
+    { type: 'prompt', content: p.cd },
+    { type: 'command', content: p.cdCmd, delay: 500 },
+    { type: 'prompt', content: `${p.prefix} iabuilder` },
     { type: 'command', content: 'iabuilder', delay: 1000 },
     { type: 'output', content: '🤖 IABuilder v3.0 - Universal AI Development Tool', delay: 500 },
     { type: 'output', content: 'No API providers configured. Let\'s set one up!', delay: 300 },
@@ -73,6 +84,9 @@ export function Demo() {
     { type: 'output', content: '💡 Pro tip: For intensive/heavy development usage, switch to premium providers:', delay: 500 },
     { type: 'output', content: '   Use /provider openai or /provider anthropic in the chat.', delay: 300 },
   ];
+  };
+
+  const demoLines = getDemoLinesForOS(selectedOS);
 
   useEffect(() => {
     if (currentLine < demoLines.length) {
@@ -93,6 +107,11 @@ export function Demo() {
     setDisplayedLines([]);
   };
 
+  // Reset demo when OS changes
+  useEffect(() => {
+    resetDemo();
+  }, [selectedOS]);
+
   return (
     <section id="demo" className="py-20 px-4 bg-gray-50">
       <div className="container mx-auto max-w-6xl">
@@ -103,6 +122,40 @@ export function Demo() {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {t('subtitle')}
           </p>
+
+          {/* OS Selector */}
+          <div className="flex justify-center gap-4 mt-8">
+            <button
+              onClick={() => setSelectedOS('linux')}
+              className={`px-6 py-2 rounded-lg font-medium transition-colors ${
+                selectedOS === 'linux'
+                  ? 'bg-gray-900 text-white'
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+              }`}
+            >
+              🐧 Linux
+            </button>
+            <button
+              onClick={() => setSelectedOS('macos')}
+              className={`px-6 py-2 rounded-lg font-medium transition-colors ${
+                selectedOS === 'macos'
+                  ? 'bg-gray-900 text-white'
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+              }`}
+            >
+              🍎 macOS
+            </button>
+            <button
+              onClick={() => setSelectedOS('windows')}
+              className={`px-6 py-2 rounded-lg font-medium transition-colors ${
+                selectedOS === 'windows'
+                  ? 'bg-gray-900 text-white'
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+              }`}
+            >
+              🪟 Windows
+            </button>
+          </div>
         </div>
 
         <div className="bg-gray-900 rounded-lg p-6 font-mono text-sm overflow-hidden">

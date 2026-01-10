@@ -43,7 +43,7 @@ export function Header() {
                 {t('docs')}
               </Link>
               <a
-                href="https://github.com/your-username/iabuilder"
+                href="https://github.com/cryptohousestar/Iabuilder"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-900 transition-colors"
